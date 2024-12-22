@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page 1</title>
+</head>
+<body>
+  <h1>หน้าแรก</h1>
+  <label for="inputData">กรอกข้อมูล:</label>
+  <input type="text" id="inputData" placeholder="พิมพ์ข้อความ">
+  <button onclick="sendData()">ส่งข้อมูล</button>
+
+  <script>
+    function sendData() {
+      const data = document.getElementById('inputData').value; // ดึงค่าจากช่อง Input
+      localStorage.setItem('data', data); // เก็บข้อมูลใน localStorage
+      window.location.href = 'we1.html'; // เปลี่ยนไปยังหน้าอื่น
+    }
+  </script>
+</body>
+</html>
