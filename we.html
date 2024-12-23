@@ -1,22 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Page 1</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ยืมอุปกรณ์กีฬา</title>
+    <link rel="stylesheet" href="we.css">
+    <script src="we.js" defer></script>  
 </head>
-<body>
-  <h1>หน้าแรก</h1>
-  <label for="inputData">กรอกข้อมูล:</label>
-  <input type="text" id="inputData" placeholder="พิมพ์ข้อความ">
-  <button onclick="sendData()">ส่งข้อมูล</button>
+<body>  
+    <form id="borrow-form">
+        <div class="container">
+            <img src="img/unnamed.png" alt="Logo" class="logo">
+            <select name="dropdown" class="dropdown" id="dropdown_equipment" required>
+                <option value="">อุปกรณ์ที่ต้องการยืม</option>
+                <option value="ลูกบอล">ลูกบอล</option>
+                <option value="ลูกบาส">ลูกบาส</option>
+                <option value="ลูกวอลเลย์บอล">ลูกวอลเลย์บอล</option>
+                <option value="ไม้แบดมินตัน/ลูกขนไก่">ไม้แบดมินตัน/ลูกขนไก่</option>
+                <option value="ไม้ปิงปอง/ลูกปิงปอง">ไม้ปิงปอง/ลูกปิงปอง</option>
+            </select>
 
-  <script>
-    function sendData() {
-      const data = document.getElementById('inputData').value; // ดึงค่าจากช่อง Input
-      localStorage.setItem('data', data); // เก็บข้อมูลใน localStorage
-      window.location.href = 'we1.html'; // เปลี่ยนไปยังหน้าอื่น
-    }
-  </script>
+            <select name="dropdown" class="dropdown" id="dropdown_GradeLevel" required>
+                <option value="">ระดับชั้น/สาขา</option>
+                <option value="ปวช 1/คอมพิเตอร์ธุรกิจ">ปวช 1/คอมพิเตอร์ธุรกิจ</option>
+                <option value="ปวช 1/ภาษาต่างประเทศ">ปวช 1/ภาษาต่างประเทศ</option>
+                <option value="ปวช 2/คอมพิเตอร์ธุรกิจ">ปวช 2/คอมพิเตอร์ธุรกิจ</option>
+                <option value="ปวช 2/ภาษาต่างประเทศ">ปวช 2/ภาษาต่างประเทศ</option>
+                <option value="ปวช 3/คอมพิเตอร์ธุรกิจ">ปวช 3/คอมพิเตอร์ธุรกิจ</option>
+                <option value="ปวช 3/ภาษาต่างประเทศ">ปวช 3/ภาษาต่างประเทศ</option>
+                <option value="ปวส 1/-">ปวส 1/-</option>
+                <option value="ปวส 2/-">ปวส 2/-</option>
+            </select>
+
+<!--             <select name="dropdown" class="dropdown" id="dropdown_Prefix" required>
+                <option value="">คำนำหน้า</option>
+                <option value="นาย">นาย</option>
+                <option value="นางสาว">นางสาว</option>
+            </select> -->
+
+            <input type="text" placeholder="ชื่อ-นามสกุล" class="input-field" id="Name_Surname" required>
+            <input type="text" placeholder="รหัสนักเรียน" class="input-field" id="Student_ID" required>
+
+            <div class="inputs">
+                <input type="date" class="field" required>
+                <span class="time-separator">-</span>
+                <input type="date" class="field" required>
+            </div>
+            <div class="inputs">
+                <input type="time" class="field" required>
+                <span class="time-separator">-</span>
+                <input type="time" class="field" required>
+            </div>
+            <button type="button" class="submit-btn" id="submit-btn" onclick="saveBorrowData()">ยืนยัน</button>
+        </div>
+    </form>
 </body>
 </html>

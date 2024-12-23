@@ -3,17 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Page 2</title>
+  <title>ยืมอุปกรณ์กีฬา</title>
+  <link rel="stylesheet" href="we1.css">
+  <script src="we1.js" defer></script>  
 </head>
 <body>
-  <h1>หน้าที่สอง</h1>
-  <p>ข้อมูลที่ได้รับ:</p>
-  <p id="outputData"></p>
-
-  <script>
-    // ดึงข้อมูลจาก localStorage
-    const data = localStorage.getItem('data');
-    document.getElementById('outputData').innerText = data; // แสดงผลข้อมูลในหน้า
-  </script>
+  <div class="container">
+    <div class="header">
+      <img src="img/unnamed.png" alt="Logo" class="logo">
+    </div>
+    <div class="table-container">
+      <table class="table" id="borrow-table">
+        <thead>
+          <tr>
+            <th>ลำดับ</th>
+            <th>ชื่อ-นามสกุล</th>
+            <th>รหัสนักเรียน</th>
+            <th>อุปกรณ์ที่ยืม</th>
+            <th>ระดับชั้น/สาขา</th>
+            <th>เวลา</th>
+            <th>วันที่</th>
+            <th>จัดการ</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+      <button class="clear-all-btn">ลบทั้งหมด</button>
+      <a href="we.html"><button class="return">หน้าแรก</button></a>
+    </div>
+  </div>
 </body>
 </html>
